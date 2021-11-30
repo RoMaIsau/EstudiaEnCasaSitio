@@ -1,0 +1,59 @@
+mat-card {
+  margin: 10px auto;
+  padding: 16px 0px 16px 0px !important;
+ // background-color: #06a367;
+ // opacity: 0.6;
+
+  
+}
+
+.mat-card-avatar{
+  height: 50px!important;
+  width: 50px!important;
+}
+a:hover{
+  color:#E47474 !important;
+}
+.mat-card-subtitle{
+  color:#5e6369!important;
+  font-size: 14px!important;
+}
+.actions {
+    position: absolute;
+    bottom: 60%;
+    right: 1%;
+    padding: 5px 11px;
+    text-align: center;
+}
+.like-active {
+  color: #25798E;
+}
+
+.pi-thumbs-up:hover {
+  cursor: pointer;
+  color: #25798E;
+}
+
+.pi-trash {
+  color: #ec0000;
+  margin: 3px;
+  cursor: pointer;
+
+}
+.like{
+  color:grey;
+}
+.like-active{
+  color:#25798E;
+}
+.card-2{
+    margin-left: 15%;  
+}
+form{
+    width: 100%!important;
+}
+
+.mat-card-avatar{
+  margin-left: 10px;
+}
+

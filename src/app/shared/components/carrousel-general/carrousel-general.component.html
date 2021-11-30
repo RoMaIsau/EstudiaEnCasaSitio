@@ -1,0 +1,35 @@
+<section [style.background]="background">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 [ngClass]='styleTitle' style="text-align:center;">{{title}}
+                </h2>
+                <carousel class='desk' cellsToShow='4' loop='true' style='display:flex;min-height: 400px;'>
+                    <div class="carousel-cell " *ngFor="let item of  cards">
+                        <div class="caja-item">
+                            <a class='pointer' [href]="item.link">
+                                <img class="" [src]="'./assets/img/'+item.img">
+                                <p class="desc">{{item.title}}</p>
+                                <p class="desc">{{item.subtitle}}</p>
+                            </a>
+                        </div>
+                    </div>
+    
+                </carousel>
+    
+                <carousel class='mob' cellsToShow='1' loop='true' style='display:flex;min-height: 300px;'>
+                    <div class="carousel-cell " *ngFor="let item of  cards;index as i ;">
+                        <div class="caja-item">
+                            <a class='pointer' [href]="item.link">
+                                <img class="" [src]="'./assets/img/'+item.img">
+                                <p class="desc">{{item.titulo}}</p>
+                                <p class="desc">{{item.sutitle}}</p>
+                            </a>
+                        </div>
+                    </div>
+    
+                </carousel>
+            </div>
+        </div>
+    </div>
+</section>

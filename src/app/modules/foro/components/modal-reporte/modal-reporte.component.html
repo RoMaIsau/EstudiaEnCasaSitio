@@ -1,0 +1,28 @@
+<div mat-dialog-content style='width: 90vh;'>
+    <div class="">
+        <div class="modal-header">
+            <div type="button" class="close" mat-dialog-close aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </div>
+        </div>
+        <div class="modal-body text-center">
+            <h3>Reportar</h3>
+            <form [formGroup]="formDatos" class="ui large error form">
+
+                <span class="p-float-label w-80  mt-4">
+                    <input id="float-input" formControlName="motivo" class='w-100' type="text" pInputText>
+                    <label for="float-input">Motivo</label>
+                </span>
+                <div *ngIf="formDatos.get('motivo').hasError('required') && formDatos.get('motivo').touched"
+                    class="text-center">
+                    <small class="p-error">Este campo es <strong>requerido</strong></small>
+                </div>
+            </form>
+            <div>
+                <button mat-button color='warn' 
+                    (click)='confirmar()'>Confirmar</button>
+            </div>
+
+        </div>
+    </div>
+</div>

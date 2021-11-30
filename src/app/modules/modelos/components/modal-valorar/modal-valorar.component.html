@@ -1,0 +1,18 @@
+<div mat-dialog-content>
+    <div class="">
+
+        <div class="modal-body text-center">
+            <h3 class='color-f text-center'>Danos tu opinión </h3>
+            <p class="clasificacion">
+               <!-- {{estrellas}}/ 5-->
+
+                <p-rating [cancel]="false" [(ngModel)]="estrellas"></p-rating>
+
+            </p>
+            <textarea style='min-height: 100px;' pInputTextarea class="inputfield w-full mt-3"
+                [(ngModel)]="comentario"></textarea>
+
+             <button (click)='valorar()' class='mt-5' pButton label="Confirmar"></button>
+        </div>
+    </div>
+</div>

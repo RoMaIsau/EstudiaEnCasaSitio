@@ -1,0 +1,43 @@
+<div class='container-login container mt-5'>
+    <mat-card class="card">
+        <mat-card-header>
+            <h1 class='title'>Dejanos tu consulta</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="formDatos" class="ui large error form">
+                <mat-form-field class='input-large' appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput formControlName="name" placeholder="" type="text">
+                </mat-form-field>
+                <div *ngIf="formDatos.get('name').hasError('required') && formDatos.get('name').touched"
+                    class="text-center error-msg">
+                    <span class="mda-form-msg">Este campo es <strong>requerido</strong></span>
+                </div><br>
+                <mat-form-field class='input-large' appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" placeholder="username@gmail.com" type="email">
+                </mat-form-field>
+                <div *ngIf="formDatos.get('email').hasError('required') && formDatos.get('email').touched"
+                    class="text-center error-msg">
+                    <span class="mda-form-msg">Este campo es <strong>requerido</strong></span>
+                </div><br>
+                <div *ngIf="formDatos.get('email').hasError('email') && formDatos.get('email').touched"
+                    class=" error-msg text-center">
+                    <span class="mda-form-msg">El formato no es correcto</span>
+                </div>
+                <mat-form-field class='input-large' appearance="outline">
+                    <mat-label>Consulta</mat-label>
+                    <input matInput formControlName="message" placeholder="" type="text">
+                </mat-form-field>
+                <div *ngIf="formDatos.get('message').hasError('required') && formDatos.get('message').touched"
+                    class="text-center error-msg">
+                    <span class="mda-form-msg">Este campo es <strong>requerido</strong></span>
+                </div><br>
+
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary">Consultar</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

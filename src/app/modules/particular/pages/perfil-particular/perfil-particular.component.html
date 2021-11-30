@@ -1,0 +1,86 @@
+<div class="p-3 container-color">
+  <p-card>
+    <div class="flex justify-content-evenly">
+      <div *ngIf='fotoPerfil'>
+        <img mat-card-avatar *ngFor="let foto of fotoPerfil" [src]="obtenerImagenEnBase64(foto)" />
+      </div>
+      <p-divider layout="vertical"></p-divider>
+      <div>
+        <br>
+        <h4 *ngIf='particular'>{{particular.usuario.nombre}} {{particular.usuario.apellido}}</h4>
+        <!--<h4 class='fs-16 mb-3'>Edad: <span> 32</span></h4>-->
+        <h4 class='fs-16 mb-3' *ngIf='particular'>Localidad:{{particular.localidad}}</h4>
+        <h4 class='fs-16 mb-3' *ngIf='particular'>Email:{{particular.usuario.email}}</h4>
+        <h4 class='fs-16 mb-3' *ngIf='particular'>Telefono:{{particular.usuario.telefono}}</h4>
+      </div>
+
+    </div>
+  </p-card>
+
+
+  <p-card>
+    <div class="col-12">
+      <h3>Descripción</h3>
+      <hr />
+      <h6 *ngIf='particular'>{{particular.experiencia}}</h6>
+    </div>
+  </p-card>  <p-card styleClass="mt-3">
+    <div class="grid">
+      <div class="col">
+        <h4 class="color-f">Datos académicos: </h4>
+        <mat-list-item *ngFor="let item of datosAcademicos">
+          <mat-card>
+            <div mat-line><i class="pi pi-briefcase
+                ml-2 mr-2" style="font-size: 1rem"></i>{{item.titulo}}</div>
+            <div class='ml-2' mat-line> {{item.fechaInicio}} - {{item.fechaFin}}</div>
+            <div class='ml-2' *ngIf='item.doc' mat-line> <a style="color:#35a763;cursor:pointer;"
+                (click)="oponDoc(item.doc)"> Ver certificado</a></div>
+          
+
+          </mat-card>
+        </mat-list-item>
+
+     
+      </div>
+    </div>
+  </p-card>
+
+
+
+  <p-card styleClass="mt-3">
+    <p-table [scrollable]="true" scrollwidth="700px" [value]="clases">
+      <ng-template pTemplate="caption">
+        <div>
+          <h4 class="color-f">Sus clases</h4>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width:200px;text-align: center;">Materia</th>
+          <th style="width:200px;text-align: center;">Fecha de publicación</th>
+          <th style="width:200px;text-align: center;">Cantidad de alumnos</th>
+          <th style="width:200px;text-align: center;">Calificación</th>
+
+          <th style="width:200px;text-align: center;"></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-clase>
+        <tr>
+          <td style="width:200px;text-align: center;">{{clase.materia.nombre}}</td>
+          <td style="width:200px;text-align: center;">{{clase.fecha |date:'d/M/yy, h:mm a'}}</td>
+          <td style="width:200px;text-align: center;">{{clase.cupo}}</td>
+          <td style="width:200px;text-align: center;">{{clase.puntuacion}} / 5</td>
+          <td style="width:200px;text-align: center;"><button pButton label="Ver más" (click)='verDetalle(clase)'></button></td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+  </p-card>
+  <p-card styleClass="mt-3">
+    <div class="grid">
+      <div class="col">
+        <app-comentarios-particular *ngIf='idParticularUser' [id]='idParticularUser'></app-comentarios-particular>
+      </div>
+    </div>
+  </p-card>
+</div>

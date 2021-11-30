@@ -1,0 +1,63 @@
+mat-card{
+    margin: 10px;
+}
+.mat-card-avatar{
+    height: 200px ;
+    width: 200px ;
+    margin:auto;
+}
+.mat-card-avatar2{
+    height:50px !important;
+    width: 50px !important;
+    margin:2px;
+    border-radius: 50px;
+}
+.categoria {
+    background-color: #37b18c;
+    position: absolute;
+    bottom: 70%;
+    right: 1%;
+    font-size: 15px;
+    padding: 2px 5px;
+    text-align: center;
+    color: #fff;
+    margin:10px 10px 0 0 ;
+}
+.stars {
+    position: absolute;
+    bottom: 73%;
+    right: 1%;
+    padding: 5px 11px;
+    text-align: center;
+}
+.pi pi-star{
+    font-size: 25px!important;
+}
+.amarillo{
+    color: #fff424!important;
+}
+
+.borde
+ {
+      border-bottom: 1px solid rgb(5, 168, 114); 
+}
+
+.x{
+    font-size: 24px!important;
+}
+
+.letraGrande{
+    font-size: 25px; 
+}
+
+.blanco2{
+    background-color: rgba(255, 255, 255, 0.596);
+}
+@media screen and (max-width:700px) {
+
+    .flex {
+        display: block!important;
+        text-align: center!important;
+    }
+   
+}

@@ -1,0 +1,19 @@
+<mat-dialog-content  (swipeleft)="changeImg(1)"
+  (swiperight)="changeImg(-1)">
+
+  <div class="ui grid">
+    <div class="row">
+      <div class="two wide column">
+          <i fxHide fxShow.gt-sm *ngIf="gallery.length > 1 " mat-button (click)="changeImg(-1)" class=" icon fs-25 icofont-arrow-left"></i>     
+      </div>
+      <div class="fourteen wide column text-center">
+        <p>{{titulo}}</p>
+        <img class="img-modal" [src]="'./assets/img/'+image.path"  />
+        <p>{{image.position+1}} de {{gallery.length}}</p>
+      </div>
+      <div class="two wide column">
+          <i fxHide fxShow.gt-sm *ngIf="gallery.length > 1  " mat-button (click)="changeImg(1)" style='right: 10px;' class="icon fs-25 icofont-arrow-right"></i>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
